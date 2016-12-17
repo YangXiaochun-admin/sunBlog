@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="x5-orientation" content="portrait | landscape" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <title>myIssue</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/issue.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body>
+    <div id="header">
+        <a href="self.html" class="iconfont pre">&#xe676;</a>
+        我的问题
+    </div>
+    <div id="wrapper">
+        <div id="scroller">
+            <div class="is-box">
+                <div class="is-title">
+                    书写你的问题&nbsp;<span class="iconfont add">&#xe680;</span>
+                </div>
+                <div class="is-cont">
+                <p class="is-inner">
+                    1设置overflow:hidden以后隐藏部分占空间的问题？display:none,overflow:hidden,等等有什么不同
+                </p>
+                <div class="opera">
+                    <span class="iconfont update">&#xe69c;</span><span class="iconfont delete">&#xe63c;</span>
+                </div>
+            </div>
+                <div class="is-cont">
+                    <p class="is-inner">
+                        2设置overflow:hidden以后隐藏部分占空间的问题？display:none,overflow:hidden,等等有什么不同
+                    </p>
+                    <div class="opera">
+                        <span class="iconfont update">&#xe69c;</span><span class="iconfont delete">&#xe63c;</span>
+                    </div>
+                </div>
+                <div class="is-cont">
+                    <p class="is-inner">
+                        3设置overflow:hidden以后隐藏部分占空间的问题？display:none,overflow:hidden,等等有什么不同
+                    </p>
+                    <div class="opera">
+                        <span class="iconfont update">&#xe69c;</span><span class="iconfont delete">&#xe63c;</span>
+                    </div>
+                </div>
+                <div class="is-cont">
+                    <p class="is-inner">
+                        1设置overflow:hidden以后隐藏部分占空间的问题？display:none,overflow:hidden,等等有什么不同
+                    </p>
+                    <div class="opera">
+                        <span class="iconfont update">&#xe69c;</span><span class="iconfont delete">&#xe63c;</span>
+                    </div>
+                </div>
+                <div class="is-cont">
+                    <p class="is-inner">
+                        2设置overflow:hidden以后隐藏部分占空间的问题？display:none,overflow:hidden,等等有什么不同
+                    </p>
+                    <div class="opera">
+                        <span class="iconfont update">&#xe69c;</span><span class="iconfont delete">&#xe63c;</span>
+                    </div>
+                </div>
+                <div class="is-cont">
+                    <p class="is-inner">
+                        3设置overflow:hidden以后隐藏部分占空间的问题？display:none,overflow:hidden,等等有什么不同
+                    </p>
+                    <div class="opera">
+                        <span class="iconfont update">&#xe69c;</span><span class="iconfont delete">&#xe63c;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/index.js"></script>
+<script>
+    $(function(){
+//        添加
+        $(".add").click(function(){
+            $(".is-box").append("<div class='is-cont'><p class='is-inner'>输入你的问题</p><div class='opera'><span class='iconfont update'>&#xe69c;</span><span class='iconfont delete'>&#xe63c;</span></div></div>");
+        })
+        //        删除
+        $(".delete").each(function(){
+            $(this).click(function(){
+                var index=$(this).index(".delete");
+                $(".is-cont").eq(index).remove();
+            })
+        })
+//        修改
+        $(".update").each(function(){
+            $(this).click(function(){
+                var index=$(this).index(".update");
+                $(".is-inner").eq(index).attr("contenteditable",true).focus();
+            })
+        })
+    })
+</script>
+</html>

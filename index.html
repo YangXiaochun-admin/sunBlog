@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait | landscape" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <title>闪屏页</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="logo" >
+                <img src="img/s1.png" alt="">
+            </div>
+            <div class="title1 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+                时间还可以
+            </div>
+            <div class="title2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+                这样玩?
+            </div>
+            <div class="content ani" swiper-animate-effect="swing" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+                <img src="img/phone.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="logo">
+                <img src="img/s2.png" alt="">
+            </div>
+            <div class="title1 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+            丰富内容
+        </div>
+            <div class="title2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+                &nbsp;&nbsp;碎片时间利用从阅读抓起
+            </div>
+            <div class="content ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+                <img src="img/phone.png" alt="">
+            </div></div>
+        <div class="swiper-slide">
+            <div class="logo">
+                <img src="img/s3.png" alt="">
+            </div>
+            <div class="title1 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+                时间价值终极转化
+            </div>
+            <div class="title2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">
+                拿碎片时间换海量知识
+            </div>
+            <div class="content ani" swiper-animate-effect="swing" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+                <img src="img/phone.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+</body>
+<script>
+    $(function(){
+        var mySwiper = new Swiper('.swiper-container',{
+            pagination : '.swiper-pagination',
+            paginationHide :true,
+            onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                swiperAnimateCache(swiper); //隐藏动画元素
+                swiperAnimate(swiper); //初始化完成开始动画
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            },
+            onTransitionStart:function(swiper){
+                if(swiper.activeIndex==2 && swiper.previousIndex==2){
+                    location.href="index1.html";
+                }
+            },
+
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,94 @@
+.wraper{
+    width:100%;
+    overflow: hidden;
+    position: absolute;
+    left:0;top:1.1rem;bottom:1rem;
+    background: #F8F8F8;
+}
+.upUser-wraper,.upPass-wraper{
+    bottom:0;
+}
+.img1,.img2{
+    width:100%;padding:.2rem .2rem 0 .2rem;
+}
+.img1 img{
+    width:101%;
+}
+.img2 img{
+    width:48%;
+}
+.img2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content{
+    width:100%;height:1.4rem;
+    background: #fff;
+    padding: 0 .3rem 0 .2rem;
+    margin-top: .3rem;
+}
+.upUser-content{
+    margin-top:0;
+    height:2.1rem;
+}
+.upPass-content{
+    margin-top:0;
+    height:3.1rem;
+}
+.txt1{
+    border-bottom: 1px solid #ccc;
+}
+.txt{
+    width:100%;height:0.7rem;
+    font-size: .3rem;color:#000;
+    line-height: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+.upUser-txt,.upPass-txt{
+    width:100%;height:1rem;
+    font-size: .4rem;color:#404040;
+    line-height: 1rem;
+}
+.upUser-txt input,.upPass-txt input{
+    margin-left: 1rem;
+}
+.exit,.reset{
+    display: block;
+    width:100%;height:1rem;
+    background:#fff;
+    font-size:.4rem;
+    text-align: center;
+    line-height: 1rem;
+    color:#FFCA27;
+    margin-top:.4rem;
+}
+.reset{
+    margin-top: 1rem;
+}
+/*loginF*/
+.box{
+    width:100%;
+    position: absolute;
+    top:1.01rem;
+}
+.loginF-content{
+    position: absolute;
+    top:6rem;left:0;right:0;margin:auto;
+    text-align: center;
+    line-height: .6rem;
+    font-size: .6rem;
+    color:#FFCA27;
+}
+.loginF-login{
+    display: block;
+    width:3rem;height:1rem;
+    position: absolute;
+    top:7.3rem;left:0;right:0;margin:auto;
+    text-align: center;
+    line-height: 1rem;
+    font-size: .4rem;
+    color:#755d12;
+    background: #ffca27;
+}

@@ -1,0 +1,26 @@
+.logo{
+    width:120px;height:200px;
+    position: relative;left:0;right:0;top:1.5rem;margin:auto;
+    text-align: center;
+}
+.logo img{
+    width:120px;height:200px;
+}
+.center{
+    position: absolute;left:0;right:0;top:6.6rem;margin:auto;
+    text-align: center;line-height: 1.1rem;
+}
+.center p:nth-child(1){
+    font-size: 1rem;
+    color:#ffe300;
+}
+.center p:nth-child(2){
+    font-size: .4rem;
+    color:#222;
+    letter-spacing: .1rem;
+}
+.footer{
+    position: absolute;left:0;right:0;bottom:.5rem;margin:auto;
+    text-align: center;
+    color:#7b7b7b;
+}

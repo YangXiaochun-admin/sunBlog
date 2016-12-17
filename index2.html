@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="x5-orientation" content="portrait | landscape" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <title>首页</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body class="index2">
+    <div id="header">
+        个人博客
+        <a href="search.html" class="iconfont sousu">&#xe608;</a>
+    </div>
+    <div id="wrapper">
+        <div id="scroller">
+            <div class="swiper-container index-slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/news1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/news2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/news3.jpg" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <ul>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">
+                        ajax
+                        <div class="time">2016-12-12</div>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <a href="javascript:void(0)" class="footer-active">
+            <div class="iconfont">&#xe6ee;</div>
+            <div class="font">首页</div>
+            <img src="img/shouye.png" alt="">
+        </a>
+        <a href="category.html">
+            <div class="iconfont">&#xe616;</div>
+            <div class="font">分类页</div>
+            <img src="img/xinyuan.png" alt="">
+        </a>
+        <a href="issue.html">
+            <div class="iconfont">&#xe607;</div>
+            <div class="font">问题帮</div>
+            <img src="img/sun.png" alt="">
+        </a>
+        <a href="loginF.html">
+            <div class="iconfont">&#xe617;</div>
+            <div class="font">个人中心</div>
+            <img src="img/my.png" alt="">
+        </a>
+    </div>
+    <div class="prompt">
+        <img src="img/huojian.png" alt="">
+        <div class="prompt-cont">此操作需要先登录，马上登录？</div>
+        <div class="prompt-bottom">
+            <a href="">下次吧</a>
+            <a href="">登录</a>
+        </div>
+    </div>
+    <!--<div class="zhezhao"></div>-->
+</body>
+<script>
+    $(function(){
+        var mySwiper = new Swiper('.swiper-container',{
+            pagination : '.swiper-pagination',
+            paginationHide :true,
+            onTouchStart: function(swiper,even){
+                swiper.unlockSwipeToPrev();
+                swiper.unlockSwipeToNext();
+                if(swiper.isEnd){
+                    swiper.lockSwipeToNext();
+                }
+                else if(swiper.activeIndex==0){
+                    swiper.lockSwipeToPrev();
+                }
+            }
+        })
+    })
+</script>
+</html>

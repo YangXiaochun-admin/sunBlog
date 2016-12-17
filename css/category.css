@@ -1,0 +1,103 @@
+/*分类页*/
+.box{
+    display:flex ;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    background: #fff;
+}
+.opt{
+    width:3rem;height:4rem;
+    border:1px solid #ccc;
+    text-align: center;
+    margin-top:.4rem;
+}
+.ca-title{
+    width:100%;
+    height:1rem;
+    font-size: .4rem;
+    line-height: 1rem;
+}
+.box .opt a:before{
+    content:"";
+    display: block;
+    width:3rem;
+    height:3rem;
+    background-size:3rem 3rem;
+    margin:auto;
+    font-size: .6rem;
+    font-weight: bold;
+    text-align: center;
+    line-height:3rem;
+    color:#fff;
+}
+.box .opt:nth-child(1) a:before{
+    background-image: url("../img/ajax.png");
+}
+.box .opt:nth-child(2) a:before{
+    background-image: url("../img/html.png");
+}
+.box .opt:nth-child(3) a:before{
+    background-image: url("../img/css.png");
+}
+.box .opt:nth-child(4) a:before{
+    background-image: url("../img/js.jpg");
+}
+.box .opt:nth-child(5) a:before{
+    background-image: url("../img/jQuery.png");
+}
+.box .opt:nth-child(6) a:before{
+    background-image: url("../img/git.png");
+}
+.box .opt:nth-child(7) a:before{
+    background-image: url("../img/php.png");
+}
+.box .opt:nth-child(8) a:before{
+    background-image: url("../img/node.png");
+}
+/*列表页*/
+#wrapper{
+    bottom:0;
+    background: #fafafa;
+}
+.wrp-cont{
+    width:100%;
+    padding:0 0.2rem .2rem .2rem;
+}
+.wrp-cont a{
+    display: block;
+    height:2rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin-top: .5rem;
+}
+.wrp-cont a .right{
+    width:73%;
+    height:2rem;
+    float: left;
+}
+.wrp-cont a .right p{
+    font-size: .4rem;
+    color:#242424;
+    line-height: .6rem;
+    font-weight: bold;
+    margin-bottom: .2rem;
+    display: inline-block;
+    text-align: left;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.wrp-cont a .right span{
+    display: block;
+    font-size: .35rem;
+    color:#bfbfbf;
+}
+.wrp-cont a .left{
+    width:25%;
+    height:2rem;
+    float: right;
+}
+.wrp-cont a .left img{
+    width:100%;
+}

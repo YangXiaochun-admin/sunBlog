@@ -1,0 +1,144 @@
+.swiper-container, .swiper-container img {
+    width: 100%;
+    height: 4.08rem;
+}
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+#scroller ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+#scroller li {
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #fff;
+    background-color: #fafafa;
+    font-size: 14px;
+}
+#scroller li a{
+    display: block;
+    width:100%;height:100%;
+}
+#scroller li a .time{
+    float: right;
+}
+.wraper{
+    width:100%;
+    background:#eee;
+    position:absolute;
+    top:0;
+    bottom:0;
+}
+.s-box{
+    width:100%;
+    height:1.3rem;
+    position: absolute;
+    top:1.1rem;
+    padding:.3rem;
+}
+.s-box input{
+    width:80%;
+    height:100%;
+    font-size: .35rem;
+    float: left;
+}
+.s-box button{
+    width:20%;
+    height:100%;
+    float: left;
+    font-size: .35rem;
+    color:#fff;
+    background: #FFCA27;
+}
+.message{
+    position: absolute;
+    top:2.4rem;
+    right:0;
+    padding:.3rem;
+    width:100%;height:4.5rem;
+    background:#fafafa;
+    overflow: hidden;
+}
+.message-top{
+    width:100%;
+    height:3rem;
+    overflow: hidden;
+}
+.message .s-cont{
+    height:3rem;
+}
+.s-cont a{
+    white-space:nowrap;
+    display: block;
+    float: left;
+    margin:0 .3rem .3rem 0;
+    text-align: center;
+    line-height: .6rem;
+    padding:0 .2rem;
+    font-size: .3rem;
+    border:1px solid #e8e8e8;
+    border-radius: 6rem;
+}
+.message .s-more{
+    height:1rem;
+    line-height: 1rem;
+    text-align: right;
+}
+
+
+.prompt{
+    width:7rem;
+    height:6rem;
+    position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;
+    z-index: 999;
+    display: none;
+}
+.prompt img{
+    width:4rem;height:4rem;
+    position: absolute;left:0;right:0;top:-40px;margin:auto;
+    z-index: 999;
+}
+.prompt-cont{
+    width:100%;height:4rem;
+    border-radius: .2rem;
+    background: #fff;
+    position: absolute;bottom:0;
+    z-index: 2;text-align: center;
+    line-height: 4rem;
+    font-size: .4rem;
+    color:#6D5200;
+}
+.prompt-bottom{
+    width:100%;height:1rem;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    position: absolute;bottom:0;
+    z-index: inherit;
+}
+.prompt-bottom a{
+    display: block;
+    width:40%;height:.8rem;
+    border-radius: 10rem;
+    font-size: .4rem;
+    color:#6D5200;
+    line-height: .8rem;
+}
+.prompt-bottom a:nth-child(1){
+    border:1px solid #FFCA27;
+}
+.prompt-bottom a:nth-child(2){
+   background: #FFCA27;
+}
+.zhezhao{
+    width:100%;height:100%;
+    background: rgba(243,45,45,0.8);
+    z-index: 999;
+}

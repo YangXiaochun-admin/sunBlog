@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait | landscape" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <title>sunContent</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body>
+    <div id="header">
+        <a href="list.html" class="iconfont pre">&#xe676;</a>
+        随时随地学习新知识
+    </div>
+    <div id="wrapper">
+        <div id="scroller">
+            <div class="box">
+                <p class="title"><strong>浅谈ajax</strong></p>
+                <div class="user">
+                    <span class="id">用户ID</span>
+                    <span class="time">今天12:43</span>
+                </div>
+                <p class="c-content">
+                    传统的Web：
+                    传统的web应用交互由用户触发一个HTTP请求到服务器，服务器对其进行处理后再返回一个新的HTML页到客户端。而在服务器处理客户端提交的请求这段时间，客户只能空闲等待。并且哪怕只是一次很小的交互，只需从服务器端得到很简单的一个数据，都要返回一个完整的HTML页，而用户每次都要浪费时间和带宽去重新读取整个页面。这样就浪费了许多的带宽，由于每次应用的交互都需要向服务器发送请求，应用的响应时间就依赖于服务器的响应时间。这导致了用户界面的响应比本地应用慢得多。
+                    AJAX:
+                    AJAX应用可以仅向服务器发送并取回必需的数据，它使用SOAP（SOAP是基于XML的简易协议，可使应用程序在HTTP上进行信息交换）或其他一些基于XML的Web Service接口，并在客户端采用JavaScript处理来自服务器的响应。因而在服务器和浏览器之间交换的数据大量减少，结果我们就能看到响应更快的应用。同时很多的处理工作可以在发出请求的客户端机器上完成，所以Web服务器的处理时间也减少了。
+                    扩展：【webService三要素：soap用来描述传递信息的格式；WSDL用来描述如何访问具体的接口；uddi用来管理，分发，查询webService】
+                    【对于应用程序开发来说，使程序之间进行因特网通信是很重要的。
+                    目前的应用程序通过使用远程过程调用（RPC远程过程调用协议）在诸如 DCOM【（分布式组件对象模型,分布式组件对象模式）是一系列微软的概念和程序接口，利用这个接口，客户端程序对象能够请求来自网络中另一台计算机上的服务器程序对象】 与 CORBA 等对象之间进行通信，但是 HTTP 不是为此设计的。RPC 会产生兼容性以及安全问题；防火墙和代理服务器通常会阻止此类流量。
+                    通过 HTTP 在应用程序间通信是更好的方法，因为 HTTP 得到了所有的因特网浏览器及服务器的支持。SOAP 就是被创造出来完成这个任务的。
+                    SOAP 提供了一种标准的方法，使得运行在不同的操作系统并使用不同的技术和编程语言的应用程序可以互相进行通信。】
+
+                    Ajax应用程序的优势在于：
+                    1. 通过异步模式，提升了用户体验
+                    2. 优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用
+                    3. Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。
+                    AJAX原理
+                    --------------------------------------------------------------------------------
+                    Ajax的工作原理相当于在用户和服务器之间加了—个中间层(AJAX引擎),使用户操作与服务器响应异步化。并不是所有的用户请求都提交给服务器,像—些数据验证和数据处理等都交给Ajax引擎自己来做, 只有确定需要从服务器读取新数据时再由Ajax引擎代为向服务器提交请求。
+                    异步请求、局部刷新：意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新
+                    [传统的网页如果需要更新内容，必须重载整个页面]
+
+                    AJAX核心
+                    --------------------------------------------------------------------------------
+                    Ajax其核心有JavaScript、XMLHTTPRequest、DOM对象组成，通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用JavaScript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。
+                    【DOM:DOM是给HTML和XML文件使用的一组API。它提供了文件的结构表述，让你可以改变其中的內容及可见物。其本质是建立网页与Script或程序语言沟通的桥梁。所有WEB开发人员可操作及建立文件的属性、方法及事件都以对象来展现（例如，document就代表“文件本身“这个对像，table对象则代表HTML的表格对象等等）。这些对象可以由当今大多数的浏览器以Script来取用。一个用HTML或XHTML构建的网页也可以看作是一组结构化的数据，这些数据被封在DOM（Document Object Model）中，DOM提供了网页中各个对象的读写的支持。】
+                    AJAX包含了哪些技术
+                    --------------------------------------------------------------------------------
+                    1. 使用XHTML+CSS来标准化呈现；
+                    2. 使用Javascript操作DOM(Document Object Model)进行动态显示及交互
+                    3. 使用XML和XSLT进行数据交换及相关操作
+                    a. XSL指扩展样式表语言，是一个XML文档的样式表语言。
+                    b. XSLT指XSL转换。是一种用于将 XML 文档转换为 XHTML 文档或其他 XML 文档的语言。
+                    4. 使用 XMLHttpRequest 进行异步数据查询、检索；
+                    5. 使用 JavaScript 绑定和处理所有数据。
+                    6.
+                    AJAX引擎
+                    --------------------------------------------------------------------------------
+
+                    Ajax引擎，实际上是一个比较复杂的JavaScript应用程序，用来处理用户请求，读写服务器和更改DOM内容。JavaScript的Ajax引擎读取信息，并且互动地重写DOM，这使网页能无缝化重构，也就是在页面已经下载完毕后改变页面内容，这是我们一直在通过JavaScript和DOM在广泛使用的方法，但要使网页真正动态起来，不仅要内部的互动，还需要从外部获取数据，在以前，我们是让用户来输入数据并通过DOM来改变网页内容的，但现在，XMLHTTPRequest，可以让我们在不重载页面的情况下读写服务器上的数据，使用户的输入达到最少。
+
+                    Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），而在以前两者是没有清晰的界限的，数据与呈现分离的分离，有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、也更加适用于现在的发布系统。也可以把以前的一些服务器负担的工作转嫁到客户端，利于客户端闲置的处理能力来处理。
+                    </p>
+                </p>
+                <div class="btn">查看更多...</div>
+            </div>
+            <div class="call">
+                <h2 class="call-title">热门评论</h2>
+                <div class="comment-cont">
+                    <div class="user-img"><img src="img/tx.jpg" alt=""></div>
+                    <div class="user-name">-敏--
+                        <div class="iconfont zan">&#xe645;<span class="num">20</span></div>
+                    </div>
+                    <div class="comment-inner">谁把你删除了，就应该同时消失！人多了，还能一个一个试？或者建群才能知道谁把你删除了！我需要这个功能！</div>
+                    <div class="replay iconfont">&#xe653;</div>
+                    <input type="text" class="comment">
+                </div>
+                <div class="comment-cont">
+                    <div class="user-img"><img src="img/tx.jpg" alt=""></div>
+                    <div class="user-name">-敏--
+                        <div class="iconfont zan">&#xe645;<span class="num">20</span></div>
+                    </div>
+                    <div class="comment-inner">谁把你删除了，就应该同时消失！人多了，还能一个一个试？或者建群才能知道谁把你删除了！我需要这个功能！</div>
+                    <div class="replay iconfont">&#xe653;</div>
+                    <input type="text" class="comment">
+                </div>
+                <div class="comment-cont">
+                    <div class="user-img"><img src="img/tx.jpg" alt=""></div>
+                    <div class="user-name">-敏--
+                        <div class="iconfont zan">&#xe645;<span class="num">20</span></div>
+                    </div>
+                    <div class="comment-inner">谁把你删除了，就应该同时消失！人多了，还能一个一个试？或者建群才能知道谁把你删除了！我需要这个功能！</div>
+                    <div class="replay iconfont">&#xe653;</div>
+                    <input type="text" class="comment">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <input type="text" placeholder="写评论" class="write">
+    </div>
+</body>
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/index.js"></script>
+<script src="js/iscroll.js"></script>
+</html>
