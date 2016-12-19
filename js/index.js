@@ -15,20 +15,48 @@ $(function(){
     size(750);
 
     //iscroll
-    var myScroll = new IScroll('#wrapper', {
+    var myScroll;
+    myScroll = new IScroll('#wrapper', {
         freeScroll: true,
         scrollbars: true,
         mouseWheel: true,
         click:true,
         interactiveScrollbars: true,
         shrinkScrollbars: 'scale',
-        fadeScrollbars: true
+        fadeScrollbars: true,
+        checkDOMChanges:true
     });
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
     }, false);
+
+    //more
+    function conceal(father,num){
+        $(father).each(function(){
+            var maxLength=num;
+            var text=$(this).text();
+            if($(this).text().length>maxLength){
+                $(this).text($(this).text().substring(0,maxLength));
+                $(this).html($(this).html()+"..."+"<a href='#' style='color:blue'>点击查看更多</a>");
+            }
+            $(this).find("a").click(function(){
+                $(this).parent().text(text);
+                myScroll.refresh();
+            })
+        })
+    }
+    conceal(".is-inner",29);
+    conceal(".c-content",200);
+    conceal(".ms-inner",56);
+    $(".replay").each(function(){
+        $(this).click(function(){
+            var index=$(this).index(".replay");
+            $(".comment").eq(index).css("display","block");
+        })
+    })
+
 })
-    //换一批
+//换一批
 $(function(){
     var num=0;
     $(".s-more>span").click(function(){
@@ -44,46 +72,37 @@ $(function(){
 })
 
 //查看更多
-$(function(){
-    //function conceal(father,num){
-    //    $(father).each(function(){
-    //        var maxLength=num;
-    //        var text=$(this).text();
-    //        if($(this).text().length>maxLength){
-    //            $(this).text($(this).text().substring(0,maxLength));
-    //            $(this).html($(this).html()+"..."+"<a href='#' style='color:blue'>点击查看更多</a>");
-    //        }
-    //        $(this).find("a").click(function(){
-    //            $(this).parent().text(text);
+//$(function(){
+    //function conceal(father,maxHeight){
+    //    setTimeout(function(){
+    //        $(father).each(function(){
+    //            var heights=$(father).height();
+    //            if(heights>maxHeight){
+    //                $(father).css({"height":maxHeight+"px","overflow":"hidden"})
+    //                $(".btn-more").css("display","block");
+    //            }
+    //            $(".btn-more").each(function(){
+    //                $(this).click(function(){
+    //                    var index=$(this).index(".btn-more");
+    //                    $(father).eq(index).css({"height":"auto"});
+    //                    $(this).css("display","none");
+    //                })
+    //            })
     //        })
-    //    })
+    //        myScroll.refresh();
+    //    },1000)
+    //
     //}
-    function conceal(father,maxHeight){
-        $(father).each(function(){
-            var heights=$(father).height();
-            if(heights>maxHeight){
-                $(father).css({"height":maxHeight+"px","overflow":"hidden"})
-                $(".btn-more").css("display","block");
-            }
-            $(".btn-more").each(function(){
-                $(this).click(function(){
-                    var index=$(this).index(".btn-more");
-                    $(father).eq(index).css({"height":"auto"});
-                    $(this).css("display","none");
-                })
-            })
-        })
-    }
-    conceal(".is-inner",29);
-    conceal(".c-content",200);
-    conceal(".ms-inner",56);
-    $(".replay").each(function(){
-        $(this).click(function(){
-            var index=$(this).index(".replay");
-            $(".comment").eq(index).css("display","block");
-        })
-    })
-})
+    //conceal(".is-inner",29);
+    //conceal(".c-content",200);
+    //conceal(".ms-inner",56);
+    //$(".replay").each(function(){
+    //    $(this).click(function(){
+    //        var index=$(this).index(".replay");
+    //        $(".comment").eq(index).css("display","block");
+    //    })
+    //})
+//})
 
 //重置后重新登录
 $(function(){
