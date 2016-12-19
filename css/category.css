@@ -55,10 +55,6 @@
     background-image: url("../img/node.png");
 }
 /*列表页*/
-#wrapper{
-    bottom:0;
-    background: #fafafa;
-}
 .wrp-cont{
     width:100%;
     padding:0 0.2rem .2rem .2rem;

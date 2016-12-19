@@ -13,6 +13,7 @@ $(function(){
         document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
     }
     size(750);
+
     //iscroll
     var myScroll = new IScroll('#wrapper', {
         freeScroll: true,
@@ -44,22 +45,38 @@ $(function(){
 
 //查看更多
 $(function(){
-    function conceal(father,num){
+    //function conceal(father,num){
+    //    $(father).each(function(){
+    //        var maxLength=num;
+    //        var text=$(this).text();
+    //        if($(this).text().length>maxLength){
+    //            $(this).text($(this).text().substring(0,maxLength));
+    //            $(this).html($(this).html()+"..."+"<a href='#' style='color:blue'>点击查看更多</a>");
+    //        }
+    //        $(this).find("a").click(function(){
+    //            $(this).parent().text(text);
+    //        })
+    //    })
+    //}
+    function conceal(father,maxHeight){
         $(father).each(function(){
-            var maxLength=num;
-            var text=$(this).text();
-            if($(this).text().length>maxLength){
-                $(this).text($(this).text().substring(0,maxLength));
-                $(this).html($(this).html()+"..."+"<a href='#' style='color:blue'>点击查看更多</a>");
+            var heights=$(father).height();
+            if(heights>maxHeight){
+                $(father).css({"height":maxHeight+"px","overflow":"hidden"})
+                $(".btn-more").css("display","block");
             }
-            $(this).find("a").click(function(){
-                $(this).parent().text(text);
+            $(".btn-more").each(function(){
+                $(this).click(function(){
+                    var index=$(this).index(".btn-more");
+                    $(father).eq(index).css({"height":"auto"});
+                    $(this).css("display","none");
+                })
             })
         })
     }
-    conceal(".is-inner",60);
+    conceal(".is-inner",29);
     conceal(".c-content",200);
-    conceal(".ms-inner",200);
+    conceal(".ms-inner",56);
     $(".replay").each(function(){
         $(this).click(function(){
             var index=$(this).index(".replay");
